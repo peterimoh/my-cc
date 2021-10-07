@@ -1,28 +1,23 @@
-import { TOGGLE_DARK_MODE } from "../actions/actionType";
+import { SET_DARK_MODE, SET_LIGHT_MODE } from '../actions/actionType';
 
+const initialState = {
+  darkTheme: false,
+};
 
-const initialState={
-    darkTheme: false
-}
+const themeReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case SET_DARK_MODE:
+      return {
+        darkTheme: true,
+      };
+    case SET_LIGHT_MODE:
+      return {
+        darkTheme: false,
+      };
 
-const themeReducer = (state=initialState, action) => {
-    switch (action.type) {
-      case TOGGLE_DARK_MODE:
-            if (state.darkMode === true) {
-                return {
-                    ...state,
-                    darkTheme: true,
-            }
-            } else {
-                return {
-                    ...state,
-                    darkTheme: false
-                }
-        }
+    default:
+      return state;
+  }
+};
 
-      default:
-        return state;
-    }
-}
-
-export {themeReducer}
+export { themeReducer };

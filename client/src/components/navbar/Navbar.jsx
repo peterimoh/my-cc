@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiSun } from 'react-icons/fi';
-import './navbar.scss';
 import Logo from '../../images/biglogo.png';
+import { useDispatch, useSelector } from 'react-redux';
+import { DarkTheme, LightTheme } from '../../store/actions/themeAction';
+import { FiSun } from 'react-icons/fi';
+import { MdNightsStay } from 'react-icons/md';
+import './navbar.scss';
 
 const Navbar = () => {
+  const themeToggle = useSelector((state) => state.themeToggle);
+  const { darkTheme } = themeToggle
+  console.log(darkTheme);
+
+  const dispatch = useDispatch();
+
+  const setDarkTheme = () => {
+    dispatch(DarkTheme());
+  };
+
+  const setLightTheme = () => {
+    dispatch(LightTheme());
+  };
+
   return (
     <header id='navbar'>
       <div className='site-logo'>
@@ -32,7 +49,11 @@ const Navbar = () => {
           </nav>
         </div>
         <div className='navbar-control'>
-          <FiSun />
+          {darkTheme ? (
+            <FiSun onClick={setDarkTheme} />
+          ) : (
+            <MdNightsStay onClick={setLightTheme} />
+          )}
         </div>
       </div>
     </header>
