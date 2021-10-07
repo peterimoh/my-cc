@@ -1,0 +1,41 @@
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+    position: sticky;
+    top: 0;
+    .site-logo{
+        .logo{
+            width: 100px;
+        }
+    }
+    .content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .navbar-nav{
+            nav{
+                ul{
+                    display: flex;
+                    li{
+                        margin: 20px;
+                        list-style: none;
+                        a{
+                            color: #000;
+                            font-size: 1.5rem;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        } .navbar-control{
+            svg{
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

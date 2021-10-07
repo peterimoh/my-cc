@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './navbar.css';
+import { FiSun } from 'react-icons/fi';
+import './navbar.scss';
 import Logo from '../../images/biglogo.png';
 
 const Navbar = () => {
@@ -8,12 +9,31 @@ const Navbar = () => {
     <header id='navbar'>
       <div className='site-logo'>
         <Link to='/'>
-          <img src={Logo} alt='peter imoh logo' />
+          <img src={Logo} alt='peter imoh logo' className='logo' />
         </Link>
       </div>
       <div className='content'>
-        <div className='navbar-nav'></div>
-        <div className='navbar-control'></div>
+        <div className='navbar-nav'>
+          <nav className='nav-links'>
+            <ul>
+              <li>
+                <Link>Home</Link>
+              </li>
+              <li>
+                <Link>Home</Link>
+              </li>
+              <li>
+                <Link>Home</Link>
+              </li>
+              <li>
+                <Link>Home</Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div className='navbar-control'>
+          <FiSun />
+        </div>
       </div>
     </header>
   );
