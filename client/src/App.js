@@ -1,27 +1,45 @@
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import { lightTheme, darkTheme } from './util/theme';
 import { GlobalStyles } from './util/globalStyle';
 import Navbar from './components/navbar/Navbar';
 import './globalStyle.scss';
 import './responsive.css';
+import Home from './containers/home/Home';
+import MobileNav from './components/mobile/MobileNav';
 
 function App() {
   const theme = useSelector((state) => state.themeToggle.darkTheme);
 
   return (
     <Router>
-      {/* <Switch> */}
+      <Switch>
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-        <GlobalStyles/>
-        {/* <div id='App-container'> */}
-          <Navbar />
-        {/* </div> */}
-        {/* </Switch> */}
+        <GlobalStyles />
+        <Wrapper
+          data-magic-cursor='show'
+          data-color='orange'
+        >
+            <Navbar />
+            <MobileNav/>
+        </Wrapper>
+        {/* <Route exact component={Home} /> */}
       </ThemeProvider>
+        </Switch>
     </Router>
   );
 }
+
+const Wrapper = styled.div`
+
+    width: 80%;
+    height: auto;
+    clear: both;
+    float: left;
+    position: relative;
+  
+`;
 
 export default App;

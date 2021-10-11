@@ -1,0 +1,72 @@
+/*---------------------------------------------------*/
+/*	MOBILE MENU
+/*---------------------------------------------------*/
+
+.kura_tm_mobile_menu {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: none;
+  z-index: 10;
+}
+
+.kura_tm_mobile_menu .mobile_in {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.kura_tm_mobile_menu .mobile_in .logo img {
+  max-width: 80px;
+  max-height: 50px;
+}
+.kura_tm_mobile_menu .trigger {
+  line-height: 0;
+}
+.kura_tm_mobile_menu .dropdown {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  background-color: #fff;
+  display: none;
+}
+.kura_tm_mobile_menu .dropdown .dropdown_inner {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  padding: 25px 40px;
+}
+.kura_tm_mobile_menu .dropdown .dropdown_inner ul {
+  margin: 0px;
+  list-style-type: none;
+}
+.kura_tm_mobile_menu .dropdown .dropdown_inner ul li {
+  margin: 0px;
+  float: left;
+  width: 100%;
+}
+.kura_tm_mobile_menu .dropdown .dropdown_inner ul li a {
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+  padding: 0px 0px;
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+
+@media (max-width: 1040px) {
+  .kura_tm_topbar {
+    display: none;
+  }
+
+  .kura_tm_mobile_menu {
+    display: block;
+  }
+}

@@ -1,7 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+    
+    @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
   *,
   *::after,
@@ -13,10 +17,19 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     padding: 0;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Mulish";
     transition: all 0.25s linear;
+    width: 80%;
   }
+
+  svg{
+	fill: ${({ theme }) => theme.svg};
+	width: 25px;
+	height: 25px;
+  cursor: pointer;
+}
+
+
   footer {
     position: absolute;
     bottom: 5%;
@@ -30,6 +43,6 @@ export const GlobalStyles = createGlobalStyle`
     display: block;
   }
   a {
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.a} !important;
   }
 `;
