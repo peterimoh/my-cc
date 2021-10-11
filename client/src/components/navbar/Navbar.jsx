@@ -34,13 +34,13 @@ const Navbar = () => {
           <nav className='nav-links'>
             <ul>
               <li>
-                <Link>about</Link>
+                <Link to='/'>about</Link>
               </li>
               <li>
-                <Link>Login</Link>
+                <Link to='/'>Login</Link>
               </li>
               <li>
-                <Link>Blog</Link>
+                <Link to='/'>Blog</Link>
               </li>
             </ul>
           </nav>
