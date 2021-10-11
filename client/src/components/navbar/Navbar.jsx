@@ -111,35 +111,3 @@ const Wrapper = styled.div`
 `;
 
 export default Navbar;
-
-// <header id='navbar'>
-//   <div classNameName='site-logo'>
-//     <Link to='/'>
-//       <img src={Logo} alt='peter imoh logo' classNameName='logo' />
-//     </Link>
-//   </div>
-//   <div classNameName='content'>
-//     <div classNameName='navbar-nav'>
-//       <nav classNameName='nav-links'>
-//         <ul>
-//           <li>
-//             <Link to='/'>about</Link>
-//           </li>
-//           <li>
-//             <Link to='/'>Login</Link>
-//           </li>
-//           <li>
-//             <Link to='/'>Blog</Link>
-//           </li>
-//         </ul>
-//       </nav>
-//     </div>
-//     <div classNameName='navbar-control'>
-//       {themeToggle === 'light' ? (
-//         <MdNightsStay onClick={() => setTheme('dark')} />
-//       ) : (
-//         <FiSun onClick={() => setTheme('light')} />
-//       )}
-//     </div>
-//   </div>
-// </header>

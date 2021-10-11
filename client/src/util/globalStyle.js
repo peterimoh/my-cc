@@ -42,7 +42,8 @@ export const GlobalStyles = createGlobalStyle`
   button {
     display: block;
   }
-  a {
-    color: ${({ theme }) => theme.a} !important;
-  }
-`;
+  `;
+  
+  // a {
+  //   color: ${({ theme }) => theme.a} !important;
+  // }

@@ -28,14 +28,7 @@
 .kura_tm_mobile_menu .trigger {
   line-height: 0;
 }
-.kura_tm_mobile_menu .dropdown {
-  width: 100%;
-  height: auto;
-  clear: both;
-  float: left;
-  background-color: #fff;
-  display: none;
-}
+
 .kura_tm_mobile_menu .dropdown .dropdown_inner {
   width: 100%;
   height: auto;
@@ -52,14 +45,6 @@
   float: left;
   width: 100%;
 }
-.kura_tm_mobile_menu .dropdown .dropdown_inner ul li a {
-  text-decoration: none;
-  color: #000;
-  display: inline-block;
-  padding: 0px 0px;
-  font-family: 'Poppins';
-  font-weight: 500;
-}
 
 @media (max-width: 1040px) {
   .kura_tm_topbar {
@@ -67,6 +52,6 @@
   }
 
   .kura_tm_mobile_menu {
-    display: block;
+    display: block !important;
   }
 }

@@ -1,11 +1,63 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import $ from 'jquery'
+import { FiSun } from 'react-icons/fi';
+import { MdNightsStay } from 'react-icons/md';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { AiOutlineClose } from 'react-icons/ai';
+import Audio1 from '../../audio/1.mp3'
+import Audio2 from '../../audio/2.mp3'
 
 import Logo from '../../images/biglogo.png';
+import { DarkTheme } from '../../store/actions/themeAction';
 import './mobilenav.css'
 
 const MobileNav = () => {
+
+      const [menuOpen, setMenuOpen] = useState(false)
+  const themeToggle = useSelector((state) => state.themeToggle.darkTheme);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!themeToggle) {
+      dispatch(DarkTheme(window.localStorage.getItem('theme')));
+    }
+  }, [themeToggle, dispatch]);
+
+  const setTheme = (value) => {
+    window.localStorage.setItem('theme', value);
+    dispatch(DarkTheme(value));
+  };
+
+  let audio_one = new Audio(Audio1)
+    let audio_two = new Audio(Audio2)
+    
+	let list			= $('.kura_tm_topbar .list ul li');
+    let hamburger 		= $('.trigger .hamburger');
+	let mobileMenu		= $('.kura_tm_mobile_menu .dropdown');
+	let mobileMenuList	= $('.kura_tm_mobile_menu .dropdown .dropdown_inner ul li a');
+
+  const handleMenuOpen = () => {
+    setMenuOpen(true)
+    console.log(menuOpen);
+      audio_one.play()
+    list.each(function(i){
+				var ele = $(this);
+				setTimeout(function(){ele.addClass('opened');},i*50);
+			});
+	mobileMenu.slideDown();
+  }
+
+  const handleMenuClose = () => {
+    setMenuOpen(false)
+      audio_two.play()
+      list.removeClass('opened');
+	mobileMenu.slideUp();
+  }
+    
+
     return (
        	<Wrapper className="kura_tm_mobile_menu">
 		<div className="mobile_menu_inner">
@@ -18,7 +70,15 @@ const MobileNav = () => {
 						<div className="hamburger-box">
 							<div className="hamburger-inner"></div>
 						</div>
-					</div>
+                        </div>
+                        
+                        {themeToggle === 'light' ? (
+                <MdNightsStay onClick={() => setTheme('dark')} />
+              ) : (
+                <FiSun onClick={() => setTheme('light')} />
+              )}
+              <div className="space"></div>
+              {!menuOpen ?  <GiHamburgerMenu onClick={handleMenuOpen} /> :  <AiOutlineClose onClick={handleMenuClose} />}
 				</div>
 			</div>
 		</div>
@@ -58,6 +118,27 @@ const Wrapper = styled.div`
   padding: 15px 30px 15px 40px;
     }
 
+ .space{
+    margin: 10px;
+  }
+
+.dropdown{
+    width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  background-color:${({ theme }) => theme.navbar};
+  display: none;
+}
+
+.dropdown .dropdown_inner ul li a {
+  text-decoration: none;
+  color: ${({ theme }) => theme.mobileNavLink};
+  display: inline-block;
+  padding: 0px 0px;
+  font-family: 'Poppins';
+  font-weight: 500;
+}
 
 `
 

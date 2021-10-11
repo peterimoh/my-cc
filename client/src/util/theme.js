@@ -6,6 +6,7 @@ export const lightTheme = {
   gradient: 'linear-gradient(#39598A, #79D7ED)',
   navbar: '',
   a: '#000',
+  mobileNavLink: '#000',
 };
 
 export const darkTheme = {
@@ -15,6 +16,7 @@ export const darkTheme = {
   toggleBorder: '#6B8096',
   svg: 'orange',
   gradient: 'linear-gradient(#091236, #1E215D)',
-    navbar: '',
-  a: '#fff'
+  navbar: '',
+  a: '#fff',
+  mobileNavLink: '#fff',
 };
