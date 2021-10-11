@@ -1,19 +1,19 @@
-import { SET_DARK_MODE, SET_LIGHT_MODE } from '../actions/actionType';
+import { SET_DARK_MODE } from '../actions/actionType';
 
 const initialState = {
-  darkTheme: false,
+  darkTheme: 'light',
 };
 
 const themeReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_DARK_MODE:
-      return {
-        darkTheme: true,
+      case SET_DARK_MODE:
+          console.log(state, action);
+          return {
+          ...state,
+              darkTheme: action.payload,
+        
       };
-    case SET_LIGHT_MODE:
-      return {
-        darkTheme: false,
-      };
+    
 
     default:
       return state;

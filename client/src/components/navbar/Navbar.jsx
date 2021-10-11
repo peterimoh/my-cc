@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../images/biglogo.png';
 import { useDispatch, useSelector } from 'react-redux';
-import { DarkTheme, LightTheme } from '../../store/actions/themeAction';
+import { DarkTheme } from '../../store/actions/themeAction';
 import { FiSun } from 'react-icons/fi';
 import { MdNightsStay } from 'react-icons/md';
 import './navbar.scss';
 
 const Navbar = () => {
-  const themeToggle = useSelector((state) => state.themeToggle);
-  const { darkTheme } = themeToggle
-  console.log(darkTheme);
-
+  const themeToggle = useSelector((state) => state.themeToggle.darkTheme);
   const dispatch = useDispatch();
 
-  const setDarkTheme = () => {
-    dispatch(DarkTheme());
-  };
+  useEffect(() => {
+    if (!themeToggle) {
+      dispatch(DarkTheme(window.localStorage.getItem('theme')));
+    }
+  }, [themeToggle, dispatch]);
 
-  const setLightTheme = () => {
-    dispatch(LightTheme());
+  const setTheme = (value) => {
+    window.localStorage.setItem('theme', value);
+    dispatch(DarkTheme(value));
   };
 
   return (
@@ -34,25 +34,22 @@ const Navbar = () => {
           <nav className='nav-links'>
             <ul>
               <li>
-                <Link>Home</Link>
+                <Link>about</Link>
               </li>
               <li>
-                <Link>Home</Link>
+                <Link>Login</Link>
               </li>
               <li>
-                <Link>Home</Link>
-              </li>
-              <li>
-                <Link>Home</Link>
+                <Link>Blog</Link>
               </li>
             </ul>
           </nav>
         </div>
         <div className='navbar-control'>
-          {darkTheme ? (
-            <FiSun onClick={setDarkTheme} />
+          {themeToggle === 'light' ? (
+            <MdNightsStay onClick={() => setTheme('dark')} />
           ) : (
-            <MdNightsStay onClick={setLightTheme} />
+            <FiSun onClick={() => setTheme('light')} />
           )}
         </div>
       </div>

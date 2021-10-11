@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 app.use('/api', userRoutes)
 
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 8080
  
 app.listen(port, ()=>console.log(`server running @ ${port}`))
 
