@@ -1,0 +1,435 @@
+/*---------------------------------------------------*/
+/*	 HERO
+/*---------------------------------------------------*/
+
+
+.kura_tm_hero {
+  width: 100%;
+  min-height: 100vh;
+  float: left;
+  clear: both;
+}
+.kura_tm_hero .container {
+  min-height: 100%;
+}
+.kura_tm_hero .content {
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  position: relative;
+  display: flex;
+}
+.kura_tm_hero .content .left {
+  width: 50%;
+  padding-right: 50px;
+  position: relative;
+   opacity: 1;
+  visibility: visible;
+  top: 0px;
+
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+/* body.opened .kura_tm_hero .content .left {
+  opacity: 1;
+  visibility: visible;
+  top: 0px;
+} */
+.kura_tm_hero .name {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: orange;
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+.kura_tm_hero .job {
+  font-size: 45px;
+  font-weight: 800;
+  line-height: 1.4;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+.kura_tm_hero .services {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  margin-bottom: 35px;
+}
+.kura_tm_hero .services ul {
+  margin: 0px;
+  list-style-type: none;
+}
+.kura_tm_hero .services ul li {
+  width: 100%;
+  float: left;
+  margin: 0px;
+}
+
+.kura_tm_hero .services ul li .svg {
+  position: relative;
+  top: 2px;
+  width: 17px;
+  height: 17px;
+  left: 10px;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.kura_tm_hero .services ul li .image {
+  /* opacity: 0; */
+  /* visibility: hidden; */
+  position: absolute;
+  /* z-index: -111; */
+}
+/* .kura_tm_modalbox {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 100vh;
+  z-index: 15;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.kura_tm_modalbox.opened {
+  opacity: 1;
+  visibility: visible;
+}
+.kura_tm_modalbox .box_inner {
+  position: absolute;
+  top: 70px;
+  bottom: 70px;
+  width: 968px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  margin-top: -20px;
+  transition-delay: 0.3s;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.kura_tm_modalbox.opened .box_inner {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 0px;
+} */
+/* .kura_tm_modalbox .close {
+  position: fixed;
+  left: 100%;
+  top: 0px;
+  margin-left: 20px;
+  z-index: 111111;
+}
+.kura_tm_modalbox .close a {
+  text-decoration: none;
+  color: #fff;
+}
+.kura_tm_modalbox .close .svg {
+  width: 50px;
+  height: 50px;
+}
+.kura_tm_modalbox .description_wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  padding: 50px;
+  overflow-y: scroll;
+}
+.kura_tm_hero .popup_informations {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: -11;
+  display: none;
+}
+.kura_tm_modalbox .popup_informations {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+}
+.kura_tm_modalbox .popup_informations .image {
+  position: relative;
+  margin-bottom: 37px;
+}
+.kura_tm_modalbox .popup_informations .image img {
+  position: relative;
+  opacity: 0;
+  min-width: 100%;
+}
+.kura_tm_modalbox .popup_informations .image .main {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+.kura_tm_modalbox .popup_informations .title {
+  width: 100%;
+  float: left;
+  margin-bottom: 22px;
+}
+.kura_tm_modalbox .title h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+.kura_tm_modalbox .description {
+  width: 100%;
+  float: left;
+}
+.kura_tm_modalbox .description p {
+  margin-bottom: 15px;
+}
+.kura_tm_modalbox .description p:last-child {
+  margin-bottom: 0px;
+}
+.kura_tm_modalbox .description_wrap::-webkit-scrollbar {
+  width: 11px;
+}
+.kura_tm_modalbox .description_wrap {
+  scrollbar-width: thin;
+  scrollbar-color: #999 #fff;
+}
+.kura_tm_modalbox .description_wrap:-webkit-scrollbar-track {
+  background: #fff;
+}
+.kura_tm_modalbox .description_wrap::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 6px;
+  border: 3px solid #fff;
+} */
+.kura_tm_hero .short_info {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+}
+.kura_tm_hero .short_info ul {
+  margin: 0px;
+  list-style-type: none;
+}
+.kura_tm_hero .short_info ul li {
+  margin: 0px 50px 15px 0px;
+  display: inline-block;
+}
+.kura_tm_hero .short_info ul li:last-child {
+  margin-right: 0px;
+}
+.kura_tm_hero .short_info ul li .list_inner {
+  display: flex;
+  align-items: center;
+}
+.kura_tm_hero .short_info ul li h3 {
+  font-size: 45px;
+  font-weight: 600;
+}
+.kura_tm_hero .short_info ul li span {
+  font-family: 'Poppins';
+  padding-left: 15px;
+  display: inline-block;
+  line-height: 1.4;
+  position: relative;
+  top: -3px;
+  font-size: 14px;
+}
+.kura_tm_hero .content .right {
+  width: 50%;
+  text-align: right;
+  padding-left: 200px;
+  position: relative;
+  opacity: 1;
+  /* visibility: hidden; */
+  top: 20px;
+
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+/* body.opened .kura_tm_hero .content .right {
+  opacity: 1;
+  visibility: visible;
+  top: 0px;
+} */
+.kura_tm_hero .content .right .image {
+  position: relative;
+}
+.kura_tm_hero .content .right .image img {
+  min-width: 100%;
+  position: relative;
+  opacity: 0;
+}
+.kura_tm_hero .content .right .image .main {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transform: rotate(7deg);
+  z-index: 2;
+  border-radius: 10px;
+
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+/* body.opened .kura_tm_hero .content .right .image .main {
+  transform: rotate(7deg);
+} */
+.kura_tm_hero .content .right .image .shape {
+  position: absolute;
+  top: 23px;
+  bottom: -23px;
+  left: -95px;
+  width: 90%;
+  background-color: orange;
+  z-index: 1;
+  border-radius: 10px;
+  transform: rotate(-6deg);
+
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.kura_tm_hero .down {
+  position: absolute;
+  left: 0px;
+  bottom: 8%;
+   opacity: 1;
+  visibility: visible;
+  bottom: 10%;
+
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.kura_tm_hero .down .svg {
+  width: 40px;
+  height: 40px;
+  animation: scroll ease 2s infinite;
+}
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(20px);
+  }
+}
+.kura_tm_hero .down a {
+  text-decoration: none;
+  color: #000;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.kura_tm_hero .down a:hover {
+  color: orange;
+}
+
+
+@media (max-width: 1400px) {
+	.container{max-width: 1170px;}
+	.kura_tm_hero .name{margin-bottom: 10px;}
+	.kura_tm_hero .job{font-size: 40px;}
+	.kura_tm_hero .services ul li a{padding: 6px 0px;}
+	/* .kura_tm_modalbox .box_inner{width: 700px;}
+	.kura_tm_modalbox .main_details{flex-direction: column;}
+	.kura_tm_modalbox .main_details .textbox{width: 100%;padding-right: 0px;margin-bottom: 30px;}
+	.kura_tm_modalbox .main_details .detailbox{width: 100%;}
+	.kura_tm_modalbox .additional_images ul{margin: 0px;}
+	.kura_tm_modalbox .additional_images ul li{width: 100%;padding-left: 0px;} */
+}
+
+@media (max-width: 1040px) {
+	.kura_tm_hero{padding: 150px 0px 120px 0px;}
+	.kura_tm_hero .content{flex-direction: column-reverse;justify-content: space-around;align-items: baseline;}
+	.kura_tm_hero .content .right{padding-left: 0px;margin-bottom: 60px;width: 100%;}
+	.kura_tm_hero .content .left{padding-right: 0px;width: 100%;}
+	.kura_tm_hero .content .right .image .shape{display: none;}
+	.kura_tm_hero .content .right .image .main{transform: rotate(0deg);}
+	body.opened .kura_tm_hero .content .right .image .main{transform: rotate(0deg);}
+	.kura_tm_hero .job{font-size: 35px;}
+	.kura_tm_hero .down{display: none;}
+	.kura_tm_skills .right{display: none;}
+	.kura_tm_skills .left{width: 100%;padding-right: 0px;}
+	.kura_tm_pricing .pricing_inner{flex-direction: column;}
+	.kura_tm_pricing .left{width: 100%;padding-right: 0px;}
+	.kura_tm_pricing .right{width: 100%;padding-left: 0px;}
+	.kura_tm_contact .contact_inner{flex-direction: column;}
+	.kura_tm_contact .left{width: 100%;padding-right: 0px;margin-bottom: 30px;}
+	.kura_tm_contact .right{width: 100%;padding-left: 0px;}
+	.kura_tm_modalbox .box_inner{width: 500px;}
+	.kura_tm_modalbox .close .svg{width: 40px;height: 40px;}	
+}
+
+
+@media (max-width: 768px) {
+	.kura_tm_hero .job{font-size: 30px;}
+	.kura_tm_hero .short_info ul li h3{font-size: 35px;}
+	.kura_tm_hero .short_info ul li span{font-size: 13px;}
+	.kura_tm_portfolio .portfolio_list .image .svg{width: 35px;height: 35px;top: 33px;right: 32px;}
+	.kura_tm_portfolio .portfolio_list .details{bottom: 31px;left: 39px;}
+	.kura_tm_portfolio .portfolio_list .details h3{font-size: 18px;}
+	.kura_tm_modalbox .portfolio_main_title h3{font-size: 20px;}
+	.kura_tm_main_title h3{font-size: 25px;}
+	.kura_tm_main_title span{margin-bottom: 6px;}
+	.kura_tm_timeline .timeline_list ul li .list_inner{width: 100%;padding-right: 0px;margin-bottom: 15px;}
+	.kura_tm_timeline .timeline_list ul li .list_inner:last-child{margin-bottom:0px;}
+	.kura_tm_pricing .right ul li span{font-size: 16px;}
+	.kura_tm_news .news_list .list_inner .svg{width: 35px;height: 35px;top: 33px;right: 32px;}
+	.kura_tm_news .news_list .details{padding: 0px 30px 36px 39px;}
+	.kura_tm_news .news_list .details h3{font-size: 18px;}
+	.kura_tm_contact .short ul li .list_inner span{font-size: 16px;}
+	.kura_tm_copyright .copyright_inner{flex-direction: column;}
+	.kura_tm_copyright .copyright_inner .text{margin-bottom: 10px;}
+	.kura_tm_modalbox .box_inner{width: 360px;}
+	.kura_tm_modalbox .close .svg{width: 20px;height: 20px;}
+	.kura_tm_modalbox .close{margin-left: 10px;}
+	.kura_tm_modalbox .description_wrap{padding: 30px;}
+	.kura_tm_modalbox .title h3{font-size: 20px;}
+	.kura_tm_modalbox .news_popup_informations .details h3{font-size: 20px;}
+}

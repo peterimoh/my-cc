@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Logo from '../../images/biglogo.png';
+import { data } from '../../data/links';
 import { useDispatch, useSelector } from 'react-redux';
 import { DarkTheme } from '../../store/actions/themeAction';
 import { FiSun } from 'react-icons/fi';
 import { MdNightsStay } from 'react-icons/md';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
+import Logo from '../../images/biglogo.png';
 import Audio1 from '../../audio/1.mp3'
 import Audio2 from '../../audio/2.mp3'
 import './navbar.css';
 
 const Navbar = () => {
-
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState('')
   const themeToggle = useSelector((state) => state.themeToggle.darkTheme);
   const dispatch = useDispatch();
 
+  
   useEffect(() => {
     if (!themeToggle) {
       dispatch(DarkTheme(window.localStorage.getItem('theme')));
@@ -58,27 +59,12 @@ const Navbar = () => {
           <div className='menu'>
             <div className='list'>
               <ul className='anchor_nav'>
-                <li className={ `${menuOpen ? 'current opened' : ''}`}>
-                  <Link to='/'>Home</Link>
-                </li>
-                <li className={ `${menuOpen ? 'current opened' : ''}`}>
-                  <Link to='#portfolio'>Portfolio</Link>
-                </li>
-                <li className={ `${menuOpen ? 'current opened' : ''}`}>
-                  <Link to='#skills'>Skills</Link>
-                </li>
-                <li className={ `${menuOpen ? 'current opened' : ''}`}>
-                  <Link to='#timeline'>Timeline</Link>
-                </li>
-                <li className={ `${menuOpen ? 'current opened' : ''}`}>
-                  <Link to='#price'>Price</Link>
-                </li>
-                <li className={ `${menuOpen ? 'current opened' : ''}`}>
-                  <Link to='#news'>News</Link>
-                </li>
-                <li className={ `${menuOpen ? 'current opened' : ''}`}>
-                  <Link to='#contact'>Contact</Link>
-                </li>
+                {data.map(x => {
+                  const { id, url, page } = x
+                  return(<li className={ `${menuOpen ? ' opened' : ''}`} key={id}>
+                  <Link to={url}>{page}</Link>
+                </li>)
+                })}
               </ul>
             </div>
             <div className='trigger'>
@@ -104,10 +90,14 @@ const Navbar = () => {
 };
 
 const Wrapper = styled.div`
-  background-color: ${({ theme }) => theme.navbar};
-  .space{
-    margin: 10px;
+.space{
+  margin: 10px;
   }
-`;
-
+  
+  a {
+    color: ${({ theme }) => theme.a} !important;
+  }
+  `;
+  
+  // background-color: ${({ theme }) => theme.navbar};
 export default Navbar;

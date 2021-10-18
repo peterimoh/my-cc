@@ -2,7 +2,7 @@
 /*	MOBILE MENU
 /*---------------------------------------------------*/
 
-.kura_tm_mobile_menu {
+/* .kura_tm_mobile_menu {
   width: 100%;
   height: auto;
   position: fixed;
@@ -10,7 +10,7 @@
   left: 0px;
   display: none;
   z-index: 10;
-}
+} */
 
 .kura_tm_mobile_menu .mobile_in {
   width: 100%;
@@ -47,10 +47,6 @@
 }
 
 @media (max-width: 1040px) {
-  .kura_tm_topbar {
-    display: none;
-  }
-
   .kura_tm_mobile_menu {
     display: block !important;
   }

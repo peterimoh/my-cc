@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     font-family: "Mulish";
     transition: all 0.25s linear;
-    width: 80%;
+
   }
 
   svg{

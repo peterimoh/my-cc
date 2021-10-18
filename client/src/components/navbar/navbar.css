@@ -124,3 +124,11 @@ body.opened .kura_tm_topbar {
 .trigger {
   display: flex;
 }
+
+
+@media (max-width: 1040px) {
+  .kura_tm_topbar {
+    display: none;
+  }
+
+}

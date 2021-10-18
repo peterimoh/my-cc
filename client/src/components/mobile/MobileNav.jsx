@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
 import $ from 'jquery'
+import {data} from '../../data/links'
 import { FiSun } from 'react-icons/fi';
 import { MdNightsStay } from 'react-icons/md';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -16,7 +18,8 @@ import './mobilenav.css'
 
 const MobileNav = () => {
 
-      const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  
   const themeToggle = useSelector((state) => state.themeToggle.darkTheme);
   const dispatch = useDispatch();
 
@@ -32,26 +35,25 @@ const MobileNav = () => {
   };
 
   let audio_one = new Audio(Audio1)
-    let audio_two = new Audio(Audio2)
+  let audio_two = new Audio(Audio2)
     
-	let list			= $('.kura_tm_topbar .list ul li');
-    let hamburger 		= $('.trigger .hamburger');
+	let list= $('.kura_tm_topbar .list ul li');
 	let mobileMenu		= $('.kura_tm_mobile_menu .dropdown');
-	let mobileMenuList	= $('.kura_tm_mobile_menu .dropdown .dropdown_inner ul li a');
 
   const handleMenuOpen = () => {
-    setMenuOpen(true)
+    setMenuOpen(!false)
     console.log(menuOpen);
       audio_one.play()
-    list.each(function(i){
+      list.each(function(i){
 				var ele = $(this);
 				setTimeout(function(){ele.addClass('opened');},i*50);
 			});
-	mobileMenu.slideDown();
+      mobileMenu.slideDown();
   }
 
   const handleMenuClose = () => {
     setMenuOpen(false)
+      console.log(menuOpen);
       audio_two.play()
       list.removeClass('opened');
 	mobileMenu.slideUp();
@@ -63,7 +65,7 @@ const MobileNav = () => {
 		<div className="mobile_menu_inner">
 			<div className="mobile_in">
 				<div className="logo">
-					<Link to="#"><img src={Logo} alt="" /></Link>
+					<Link to="/"><img src={Logo} alt="logo" /></Link>
 				</div>
 				<div className="trigger">
 					<div className="hamburger hamburger--slider">
@@ -85,13 +87,10 @@ const MobileNav = () => {
 		<div className="dropdown">
 			<div className="dropdown_inner">
 				<ul className="anchor_nav">
-					<li className="current"><Link to="#home">Home</Link></li>
-					<li><Link to="#portfolio">Portfolio</Link></li>
-					<li><Link to="#skills">Skills</Link></li>
-					<li><Link to="#timeline">Timeline</Link></li>
-					<li><Link to="#price">Price</Link></li>
-					<li><Link to="#news">News</Link></li>
-					<li><Link to="#contact">Contact</Link></li>
+              {data.map(x => {
+                const { id, page, url } = x
+                return (<li key={id}><Link to={url}>{ page}</Link></li>)
+              })}
 				</ul>
 			</div>
 		</div>
@@ -100,6 +99,7 @@ const MobileNav = () => {
 }
 
 const Wrapper = styled.div`
+
  width: 100%;
   height: auto;
   position: fixed;
@@ -108,12 +108,14 @@ const Wrapper = styled.div`
   display: none;
   z-index: 10;
 
+ 
+
 .mobile_menu_inner{
   width: 100%;
   height: auto;
   float: left;
   clear: both;
-  background-color: ${({ theme }) => theme.navbar};
+ 
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 15px 30px 15px 40px;
     }
@@ -141,5 +143,5 @@ const Wrapper = styled.div`
 }
 
 `
-
+ // background-color: ${({ theme }) => theme.navbar};
 export default MobileNav

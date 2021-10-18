@@ -10,9 +10,9 @@ import './responsive.css';
 import Home from './containers/home/Home';
 import MobileNav from './components/mobile/MobileNav';
 
-function App() {
+function App(props) {
   const theme = useSelector((state) => state.themeToggle.darkTheme);
-
+ 
   return (
     <Router>
       <Switch>
@@ -23,9 +23,9 @@ function App() {
           data-color='orange'
         >
             <Navbar />
-            <MobileNav/>
+            <MobileNav {...props}/>
         </Wrapper>
-        {/* <Route exact component={Home} /> */}
+        <Route exact component={Home} />
       </ThemeProvider>
         </Switch>
     </Router>
