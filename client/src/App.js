@@ -18,10 +18,7 @@ function App(props) {
       <Switch>
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <GlobalStyles />
-        <Wrapper
-          data-magic-cursor='show'
-          data-color='orange'
-        >
+        <Wrapper>
             <Navbar />
             <MobileNav {...props}/>
         </Wrapper>
