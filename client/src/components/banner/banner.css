@@ -68,6 +68,9 @@
   float: left;
   margin: 0px;
 }
+.kura_tm_hero .services ul li a, span{
+  cursor: pointer;
+}
 
 .kura_tm_hero .services ul li .svg {
   position: relative;
@@ -86,7 +89,7 @@
 .kura_tm_hero .services ul li .image {
   /* opacity: 0; */
   /* visibility: hidden; */
-  position: absolute;
+  /* position: absolute; */
   /* z-index: -111; */
 }
 /* .kura_tm_modalbox {

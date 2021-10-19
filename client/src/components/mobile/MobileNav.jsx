@@ -115,7 +115,7 @@ const Wrapper = styled.div`
   height: auto;
   float: left;
   clear: both;
- 
+ background-color:${({ theme }) => theme.navbar};
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 15px 30px 15px 40px;
     }

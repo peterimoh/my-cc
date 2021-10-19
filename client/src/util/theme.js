@@ -8,6 +8,8 @@ export const lightTheme = {
   a: '#000',
   mobileNavLink: '#000',
   service: '#000',
+  modal: 'rgba(0,0,0,.8);',
+  box_inner: "#E2E2E2",
 };
 
 export const darkTheme = {
@@ -21,4 +23,6 @@ export const darkTheme = {
   a: '#fff',
   mobileNavLink: '#fff',
   service: '#fff',
+  modal: 'rgba(0,0,0,.8);',
+  box_inner: '#494b50',
 };

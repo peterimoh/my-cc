@@ -1,18 +1,39 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import Modal from 'react-modal'
-import {Link } from 'react-router-dom'
+import {Link as a } from 'react-router-dom'
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { BsArrowDown } from 'react-icons/bs';
 import Hero from '../../images/hero.jpeg'
 import serviceThumb from '../../images/4-2.jpg'
 import Thumbnail from '../../images/3-4.jpg'
+import web from '../../images/web.jpg'
+import mobile from '../../images/mobile.jpg'
 import './banner.css'
 import Popup from '../popup/Popup';
 
 const Banner = () => {
-	// const [modalIsOpen, setModalIsOpen] = useState(false)
+	const [openWeb, setOpenWeb] = useState(false)
+	const [openMobile, setOpenMobile] = useState(false)
+	const [openSEO, setOpenSEO] = useState(false)
+	
 
+	const Open = () => {
+		setOpenWeb(true) 
+	}
+
+	const OpenMobile = () => {
+		setOpenMobile(true)
+	}
+
+	const OpenSEO = () => {
+		setOpenSEO(true)
+	}
+	
+
+	const Close = () => {
+		setOpenWeb(false) || setOpenMobile(false) || setOpenSEO(false) 
+	}
     return (
         <Wrapper id="home">
 		<div className="kura_tm_hero">
@@ -24,66 +45,70 @@ const Banner = () => {
 						<div className="services">
 							<ul>
 								<li>
-									<Link href="#">
+									<a onClick={Open}>
 										<span>Web Development</span>
 										<AiOutlineArrowRight className='svg'/>
-									</Link>
-										{/* <Popup>
-									
-										
+										</a>
+										{openWeb ? <Popup closeWeb={Close}>
 											<div className="popup_informations">
 												<div className="image">
 													<img src={serviceThumb} alt="placeholder" />
-													<div className="main" data-img-url="img/service/1.jpg" style={{ backgroundImage: "url('img/service/1.jpg')" }}></div>
+													<div className="main" data-img-url={web} style={{backgroundImage: `url(${web})`}}></div>
 												</div>
 
-												<div class="title"><h3>Web Development</h3></div>
+												<div className="title"><h3>Web Development</h3></div>
 											<div className="description">
 												<p>Kura is a leading web design agency with an award-winning design team that creates innovative, effective websites that capture your brand, improve your conversion rates, and maximize your revenue to help grow your business and achieve your goals.</p>
 												<p>In today’s digital world, your website is the first interaction consumers have with your business. That's why almost 95 percent of a user’s first impression relates to web design. It’s also why web design services can have an immense impact on your company’s bottom line.</p>
 												<p>That’s why more companies are not only reevaluating their website’s design but also partnering with Kura, the web design agency that’s driven more than $2.4 billion in revenue for its clients. With over 50 web design awards under our belt, we're confident we can design a custom website that drives sales for your unique business.</p>
 											</div>
-										</div>
-								
-											
-									</Popup> */}
+										</div>	
+									</Popup> : null}
+										
 								</li>
 								<li>
-									<Link to="#">
+									<a onClick={OpenMobile}>
 										<span>Mobile Development</span>
 										<AiOutlineArrowRight className='svg'/>
-										</Link>
-										{/* <Popup>
-										<img className="image" src={serviceThumb} alt="" />
+										</a>
+										{openMobile ? <Popup closeWeb={Close}>
+											<div className="popup_informations">
+												<div className="image">
+													<img src={serviceThumb} alt="placeholder" />
+													<div className="main" data-img-url={web} style={{backgroundImage: `url(${mobile})`}}></div>
+												</div>
 
-								
-										<div className="popup_informations">
+												<div className="title"><h3>Web Development</h3></div>
 											<div className="description">
-												<p>SEO is always at the top of any digital marketing agency services list. That’s because it affects all your online marketing strategies. SEO is vital to ensure your website shows up in online searches. Without effective SEO, prospective customers may never get to see any of your digital marketing efforts. That’s because search engines have the power to choose which websites appear when people conduct online searches.</p>
-												<p> They decide this based on complex algorithms that weigh up numerous criteria to determine if your website is what the searcher is looking for. In simple terms, SEO means optimizing all your online content so that’s it’s easily discoverable by these search engines. For example, if you’re selling socks, you want the search engines to present your website first when people type ‘’socks’’ into their search bar. It makes sense that thousands of websites would have a term like ‘socks’ associated with them. That’s why it’s important to use the services of a digital marketing agency to help you stand out amongst the competition.</p>
+												<p>Kura is a leading web design agency with an award-winning design team that creates innovative, effective websites that capture your brand, improve your conversion rates, and maximize your revenue to help grow your business and achieve your goals.</p>
+												<p>In today’s digital world, your website is the first interaction consumers have with your business. That's why almost 95 percent of a user’s first impression relates to web design. It’s also why web design services can have an immense impact on your company’s bottom line.</p>
+												<p>That’s why more companies are not only reevaluating their website’s design but also partnering with Kura, the web design agency that’s driven more than $2.4 billion in revenue for its clients. With over 50 web design awards under our belt, we're confident we can design a custom website that drives sales for your unique business.</p>
 											</div>
-										</div>
-									
-										</Popup> */}
+										</div>	
+									</Popup> : null}
 								</li>
 								<li>
-									<Link href="#">
+									<a onClick={OpenSEO}>
 										<span>Search Engine Optimization</span>
 										<AiOutlineArrowRight className='svg'/>
-										</Link>
-										 {/* <Popup>
+										</a>
+										{openSEO ? <Popup closeWeb={Close}>
+											<div className="popup_informations">
+												<div className="image">
+													<img src={serviceThumb} alt="placeholder" />
+													<div className="main" data-img-url={web} style={{backgroundImage: `url(${web})`}}></div>
+												</div>
 
-										<img className="image" src={serviceThumb} alt="" />
-
-										<div className="popup_informations">
+												<div className="title"><h3>Web Development</h3></div>
 											<div className="description">
-												<p>Visual content converts faster than words alone. Content marketing strategies powered by dynamic media outperform all others, and with a variety of visual assets supporting your marketing, we turn your brand into an ROI engine. Attract a larger audience, nurture high-intent prospects and enhance customer engagement with design that matters.</p>
-												<p>Visualize complex data, intuitive concepts and compelling narratives with infographics of every size. Our expert designers synthesize dense information and transform it into engaging graphical stories that your audience will retain in seconds and remember for weeks. Want to stay top of mind?Infographics are shared or liked on social media 3X more often than other content types. Brafton graphic design services make infographic.</p>
+												<p>Kura is a leading web design agency with an award-winning design team that creates innovative, effective websites that capture your brand, improve your conversion rates, and maximize your revenue to help grow your business and achieve your goals.</p>
+												<p>In today’s digital world, your website is the first interaction consumers have with your business. That's why almost 95 percent of a user’s first impression relates to web design. It’s also why web design services can have an immense impact on your company’s bottom line.</p>
+												<p>That’s why more companies are not only reevaluating their website’s design but also partnering with Kura, the web design agency that’s driven more than $2.4 billion in revenue for its clients. With over 50 web design awards under our belt, we're confident we can design a custom website that drives sales for your unique business.</p>
 											</div>
-										</div>
-										
-										</Popup>  */}
+										</div>	
+									</Popup> : null}
 								</li>
+								
 							</ul>
 						</div>
 						<div className="short_info">
@@ -104,16 +129,16 @@ const Banner = () => {
 						</div>
 					</div>
 					<div className="right">
-						<div class="image">
+						<div className="image">
 							<img src={Thumbnail} alt="placeholder"/>
-							<div class="main" data-img-url={Hero} style={{backgroundImage: `url(${Hero})`}}></div>
-							<div class="shape"></div>
+							<div className="main" data-img-url={Hero} style={{backgroundImage: `url(${Hero})`}}></div>
+							<div className="shape"></div>
 						</div>
 					</div>
 					<div className="down anchor">
-							<Link>
+							<a>
 						<BsArrowDown className='svg'/>
-							</Link>
+							</a>
 					</div> 
 				</div>
 			</div>
