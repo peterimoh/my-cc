@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { lightTheme, darkTheme } from './util/theme';
 import { GlobalStyles } from './util/globalStyle';
 import Navbar from './components/navbar/Navbar';
-import './globalStyle.scss';
+import './globalStyle.css';
 import './responsive.css';
 import Home from './containers/home/Home';
 import MobileNav from './components/mobile/MobileNav';

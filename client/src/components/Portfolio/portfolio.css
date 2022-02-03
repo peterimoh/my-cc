@@ -1,5 +1,5 @@
 /*---------------------------------------------------*/
-/*	05) KURA PORTFOLIO
+/*	PORTFOLIO
 /*---------------------------------------------------*/
 
 .kura_tm_main_title{
@@ -11,7 +11,7 @@
 .kura_tm_main_title span{
 	display: inline-block;
 	margin-bottom: 10px;
-	color: #ff4522;
+	color: orange;
 	font-family: "Poppins";
 	font-weight: 500;
 }
@@ -26,6 +26,25 @@
 	float: left;
 	padding: 140px 0px 138px 0px;
 }
+
+.kura_tm_portfolio .container {
+    max-width: 1250px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    padding: 0px 40px;
+    position: relative;
+    clear: both;
+}
+
+@media (max-width: 1400px){
+.kura_tm_portfolio .container {
+    max-width: 1170px;
+}
+}
+
+
 .kura_tm_portfolio .portfolio_list{
 	width: 100%;
 	height: auto;
@@ -215,7 +234,7 @@
 	        transition: all .3s ease;
 }
 .kura_tm_swiper_progress .my_navigation ul li a:hover{
-	color: #ff4522;
+	color: orange;
 }
 .kura_tm_swiper_progress .my_navigation ul li .svg{
 	width: 27px;
